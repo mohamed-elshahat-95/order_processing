@@ -78,4 +78,9 @@ class ApiController extends Controller
     {
         //
     }
+
+    public function test()
+    {
+        // Create test function
+    }
 }
