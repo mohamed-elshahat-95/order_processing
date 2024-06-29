@@ -16,7 +16,14 @@ use App\Http\Controllers\PostsController;
 |
 */
 
+Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
-Route::get('/users', [ApiController::class, 'getUsers'])->middleware('auth:sanctum');
-Route::get('/posts', [PostsController::class, 'getPosts'])->middleware('auth:sanctum');
+
+Route::group(['prefix' => 'posts', 'middleware' => ['auth:sanctum']], function () {
+    Route::get('/', [PostsController::class, 'getPosts']);
+    Route::get('{post_id}', [PostsController::class, 'showPost']);
+    Route::post('/create', [PostsController::class, 'createPost']);
+    Route::post('/{post_id}/upload-image', [PostsController::class, 'uploadImage']);
+});
+
 

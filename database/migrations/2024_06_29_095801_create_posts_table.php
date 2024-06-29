@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->char('title');
-            $table->text('description')->nullable();
+            $table->text('description', 2048)->nullable();
             $table->char('contact_phone_number')->nullable();
             $table->text('image')->nullable();
             $table->timestamp('created_at')->nullable();
