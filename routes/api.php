@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/login', 'App\Http\Controllers\ApiController@login');
-Route::get('/users', 'App\Http\Controllers\ApiController@getUsers')->middleware('auth:sanctum');
-Route::get('/me', 'App\Http\Controllers\ApiController@getMyData')->middleware('auth:sanctum');
+Route::post('/login', [ApiController::class, 'login']);
+Route::get('/users', [ApiController::class, 'getUsers'])->middleware('auth:sanctum');
+Route::get('/posts', [PostsController::class, 'getPosts'])->middleware('auth:sanctum');
 
