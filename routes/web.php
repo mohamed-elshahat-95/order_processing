@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+use App\Models\Posts;
 Route::get('/', function () {
-    return view('welcome');
+    $posts = Posts::with('creator')->get();
+    return view('welcome', compact('posts'));
 });
