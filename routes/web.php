@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,5 @@ Route::get('/', function () {
     $posts = Posts::with('creator')->get();
     return view('welcome', compact('posts'));
 });
+
+Route::get('customers/{id}', [CustomerController::class, 'getCustomerByID']);
