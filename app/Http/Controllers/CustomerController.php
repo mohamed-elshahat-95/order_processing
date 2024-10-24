@@ -6,6 +6,7 @@ use App\Models\Customers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -22,5 +23,10 @@ class CustomerController extends Controller
         // Using Cache... (Redis Driver .env) => set values done via Fill Cache Command file 
         $customerData = Cache::get("customer_id_$id");
         dd($customerData);
+    }
+
+    public function test(){
+        $hashedPassword = Hash::make('password');
+        dd($hashedPassword);
     }
 }

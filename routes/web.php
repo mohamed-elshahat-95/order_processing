@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('customers/{id}', [CustomerController::class, 'getCustomerByID']);
+Route::get('test', [CustomerController::class, 'test']);
