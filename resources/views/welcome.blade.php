@@ -1,50 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Me...</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-  </style>
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row content">
-            <div class="col-sm-12">
-                <h4><small>RECENT POSTS</small></h4>
-                <hr>
-                @foreach($posts as $post)
-                <div class="col-sm-3">
-                  <div style="padding: 10px">
-                    <h3>{{$post->title}}</h3>
-                    <h5><span class="glyphicon glyphicon-time"></span> Post by {{$post->creator->name}}, {{$post->created_at}}.</h5>
-                    <p>{{$post->description}}</p>
-                    <h5>Leave a Comment:</h5>
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                  </div>
-                  <hr>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Laravel</title>
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    </head>
+    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
+                <div style="text-align: center;padding-top:50px;font-size:20px;font-weight:bold">
+                    <a href="https://www.linkedin.com/in/mohamed-elshahat-0a7747190" target="_blank">Mohamed Elshahat</a>
                 </div>
-                
-                @endforeach
             </div>
         </div>
-    </div>
-
-    <footer class="container-fluid">
-        <p>Mohamed Elshahat</p>
-    </footer>
-</body>
+    </body>
 </html>
