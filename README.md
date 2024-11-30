@@ -5,12 +5,12 @@ Steps to do...
 1- Create (.env) file, you can copy the content of the (.env.example) file and past it on the created .env file,
 and set the database credentials on it like this:
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=test
-DB_USERNAME=root
-DB_PASSWORD=root
+DB_CONNECTION=mysql\
+DB_HOST=127.0.0.1\
+DB_PORT=3306\
+DB_DATABASE=test\
+DB_USERNAME=root\
+DB_PASSWORD=root\
 
 2- run [composer dump-autoload]
 
